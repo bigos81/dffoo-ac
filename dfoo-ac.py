@@ -3,6 +3,7 @@ from imagesearch import *
 
 precision = 0.7
 fail_in_a_row_threshold = 3
+max_minutes_to_give_up = 7
 
 
 def main():
@@ -13,7 +14,18 @@ def main():
     last_failed = 0
     failed = 0
     cnt = 0
+    start_time = datetime.datetime.now()
     while 1:
+        elapsed = datetime.datetime.now() - start_time
+        print('\rCycle at: {:.1f}/{:.1f}\r'.format(elapsed.total_seconds() / 60, max_minutes_to_give_up), end='\r')
+        if elapsed.total_seconds() >= max_minutes_to_give_up * 60:
+            log('Giving up')
+            go_and_long_click_polite('res/pause.png')
+            go_and_long_click_polite('res/give-up-big.png')
+            time.sleep(2)
+            go_and_long_click_polite('res/yes.png')
+            fail = 1
+
         if go_and_long_click_polite('res/quest-lv-70-button.png'):
             last_failed = failed
             failed = 0
@@ -31,6 +43,7 @@ def main():
             log('Iteration [{}], failed [{}], failed in a row [{}], ranks gained [{}]'.format(cnt, total_failed,
                                                                                               total_failed_in_a_row,
                                                                                               ranks_gained))
+            start_time = datetime.datetime.now()
 
         go_and_long_click_polite('res/begin-button.png')
         go_and_long_click_polite('res/begin-button2.png')

@@ -44,10 +44,14 @@ Only settings are stored in global variables of the script:
 ```python
 precision = 0.7
 fail_in_a_row_threshold = 3
+max_minutes_to_give_up = 5
 ```
 **precision** refers to image template matching precision (you'd have to dig deeper in openCV libs), 0.7 works for me
 
 **fail_in_a_row_threshold** how many lost battles in the row terminates the script
+
+**max_minutes_to_give_up** how many minutes must the cycle (from start to end) last to give up and restart cycle (for 
+situations when you are left with weak character and kaktuar that will never kill you, nor you will kill him) 
 
 ## Known issues
 The script will only work with Vysor being launched on primary screen monitor.
