@@ -49,6 +49,11 @@ fail_in_a_row_threshold = 3
 
 **fail_in_a_row_threshold** how many lost battles in the row terminates the script
 
+## Known issues
+The script will only work with Vysor being launched on primary screen monitor.
+
+The scrip takes over control pf the mouse, so it's deigned to run on a machine you are not actively using. 
+
 # End notes
 Have fun with it :)
 
