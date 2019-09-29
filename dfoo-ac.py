@@ -60,7 +60,7 @@ def main():
         if exists_image('res/spend-100.png'):
             go_and_long_click_polite('res/no.png')
 
-        go_and_long_click_polite('res/cross.png')
+        # go_and_long_click_polite('res/cross.png')
 
 
 def log(message):
