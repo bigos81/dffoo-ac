@@ -6,6 +6,8 @@ fail_in_a_row_threshold = 3
 
 
 def main():
+    log('Staring...')
+    ranks_gained = 0
     total_failed = 0
     total_failed_in_a_row = 0
     last_failed = 0
@@ -17,21 +19,23 @@ def main():
             failed = 0
 
             if last_failed == 0:
-                total_tailed_in_a_row = 0
+                total_failed_in_a_row = 0
             else:
-                total_tailed_in_a_row = total_tailed_in_a_row + 1
+                total_failed_in_a_row = total_failed_in_a_row + 1
 
-            if total_tailed_in_a_row >= fail_in_a_row_threshold:
+            if total_failed_in_a_row >= fail_in_a_row_threshold:
                 exit(1)
 
             cnt = cnt + 1
-            log('Iteration [{}], total failed [{}], failed in a row [{}]'.format(cnt, total_failed,
-                                                                                 total_failed_in_a_row))
+            log('Iteration [{}], failed [{}], failed in a row [{}], ranks gained [{}]'.format(cnt, total_failed,
+                                                                                              total_failed_in_a_row,
+                                                                                              ranks_gained))
 
         go_and_long_click_polite('begin-button.png')
         go_and_long_click_polite('begin-button2.png')
         go_and_long_click_polite('next-button.png')
-        go_and_long_click_polite('confirm-button.png')
+        if go_and_long_click_polite('confirm-button.png'):
+            ranks_gained = ranks_gained + 1
 
         if exists_image('receive-support.png'):
             go_and_long_click_polite('rank.png')
@@ -45,7 +49,7 @@ def main():
 
 
 def log(message):
-    print(str(datetime.datetime.now()) + ': ' + message)
+    print(str(datetime.datetime.now().isoformat(timespec='seconds')) + ': ' + message)
 
 
 def exists_image(image):
