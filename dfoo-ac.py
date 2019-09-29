@@ -17,7 +17,7 @@ def main():
     start_time = datetime.datetime.now()
     while 1:
         elapsed = datetime.datetime.now() - start_time
-        print('\rCycle at: {:.1f}/{:.1f}\r'.format(elapsed.total_seconds() / 60, max_minutes_to_give_up), end='\r')
+        print('Cycle at: {:.1f}/{:.1f} [min]'.format(elapsed.total_seconds() / 60, max_minutes_to_give_up), end='\r')
         if elapsed.total_seconds() >= max_minutes_to_give_up * 60:
             log('Giving up')
             go_and_long_click_polite('res/pause.png')
