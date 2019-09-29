@@ -1,9 +1,9 @@
-#Introduction
+# Introduction
 The software is designed to click through the UI of Dissidia Final Fantasy Opera to make an endless loop of a daily 
 quest. I'm not aiming at code-for-everyone repo, that you just take and it works out of the box. It works for me an 
 that's probably enough :)
 
-#What do I use
+# What do I use
 ## Game 
 Opera Omnia at PlayStore: https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.DFFOperaOmnian&hl=en
 Yes, i'm using Android. The game version i've tested this with is: 1.11.1.
