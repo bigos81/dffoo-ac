@@ -20,7 +20,10 @@ def main():
         print('Cycle at: {:.1f}/{:.1f} [min]'.format(elapsed.total_seconds() / 60, max_minutes_to_give_up), end='\r')
         if elapsed.total_seconds() >= max_minutes_to_give_up * 60:
             log('Giving up')
+            go_and_long_click_polite('res/cross.png')
+            time.sleep(2)
             go_and_long_click_polite('res/pause.png')
+            time.sleep(2)
             go_and_long_click_polite('res/give-up-big.png')
             time.sleep(2)
             go_and_long_click_polite('res/yes.png')
