@@ -40,9 +40,8 @@ def main():
                 exit(1)
 
             cnt = cnt + 1
-            log('Iteration [{}], failed [{}], failed in a row [{}], ranks gained [{}]'.format(cnt, total_failed,
-                                                                                              total_failed_in_a_row,
-                                                                                              ranks_gained))
+            log('Iteration [{}], failed [{}], failed in a row [{}], ranks gained [{}], time: {:.1f} [sec]'.
+                format(cnt, total_failed, total_failed_in_a_row, ranks_gained, elapsed.total_seconds()))
             start_time = datetime.datetime.now()
 
         go_and_long_click_polite('res/begin-button.png')
