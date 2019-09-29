@@ -22,6 +22,7 @@ def main():
                 total_failed_in_a_row = 0
             else:
                 total_failed_in_a_row = total_failed_in_a_row + 1
+                total_failed = total_failed + 1
 
             if total_failed_in_a_row >= fail_in_a_row_threshold:
                 exit(1)
