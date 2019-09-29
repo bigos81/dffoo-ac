@@ -14,7 +14,7 @@ def main():
     failed = 0
     cnt = 0
     while 1:
-        if go_and_long_click_polite('quest-lv-70-button.png'):
+        if go_and_long_click_polite('res/quest-lv-70-button.png'):
             last_failed = failed
             failed = 0
 
@@ -31,21 +31,21 @@ def main():
                                                                                               total_failed_in_a_row,
                                                                                               ranks_gained))
 
-        go_and_long_click_polite('begin-button.png')
-        go_and_long_click_polite('begin-button2.png')
-        go_and_long_click_polite('next-button.png')
-        if go_and_long_click_polite('confirm-button.png'):
+        go_and_long_click_polite('res/begin-button.png')
+        go_and_long_click_polite('res/begin-button2.png')
+        go_and_long_click_polite('res/next-button.png')
+        if go_and_long_click_polite('res/confirm-button.png'):
             ranks_gained = ranks_gained + 1
 
-        if exists_image('receive-support.png'):
-            go_and_long_click_polite('rank.png')
+        if exists_image('res/receive-support.png'):
+            go_and_long_click_polite('res/rank.png')
 
-        if exists_image('give-up.png'):
-            go_and_long_click_polite('yes.png')
+        if exists_image('res/give-up.png'):
+            go_and_long_click_polite('res/yes.png')
             failed = 1
 
-        if exists_image('spend-100.png'):
-            go_and_long_click_polite('no.png')
+        if exists_image('res/spend-100.png'):
+            go_and_long_click_polite('res/no.png')
 
 
 def log(message):
