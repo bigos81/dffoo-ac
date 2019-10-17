@@ -15,7 +15,7 @@ I do use native client, but the chrome plug-in should work as well. I also do us
 quality of the image is good. You may try with free version (which will pop-up ads as well) which you'll have to deal
 with as well. Anyway my settings for video quality are:
 
-- Bitrate: 2Mbit
+- Bitrate: 2 Mbit
 - Resolution: 50%
 - Decoder: Software
 
